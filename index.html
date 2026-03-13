@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      id="site-description"
+      name="description"
+      content="Tarfay is a cozy coffee shop, art gallery, and intimate event space on Prince Nasser Street in Al Khobar."
+    />
+    <title>Tarfay | Coffee Shop & Art Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-glow page-glow-left"></div>
+    <div class="page-glow page-glow-right"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Tarfay home">
+        <span class="brand-mark">
+          <img src="Logo.png" alt="Tarfay logo" />
+        </span>
+        <span class="brand-text">
+          <strong>Tarfay</strong>
+          <small data-i18n="brand.tagline">Coffee & Art House</small>
+        </span>
+      </a>
+
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button class="lang-button is-active" type="button" data-lang-switch="en">EN</button>
+          <button class="lang-button" type="button" data-lang-switch="ar">AR</button>
+        </div>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-i18n="ui.menu"
+        >
+          Menu
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="#story" data-i18n="nav.story">Story</a>
+          <a href="#founder" data-i18n="nav.founder">Founder</a>
+          <a href="#menu" data-i18n="nav.menu">Menu</a>
+          <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+          <a href="#moments" data-i18n="nav.moments">Moments</a>
+          <a href="#visit" data-i18n="nav.visit">Visit</a>
+          <a
+            class="nav-cta"
+            href="https://www.instagram.com/tarfay.sa/"
+            target="_blank"
+            rel="noreferrer"
+            data-i18n="nav.instagram"
+          >
+            Instagram
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Prince Nasser St, Al Khobar Al Shamalia</p>
+          <h1 data-i18n="hero.title">Coffee, art, and intimate events under one elegant roof.</h1>
+          <p class="hero-text" data-i18n="hero.text">
+            Tarfay is a cozy Al Khobar destination where specialty coffee, gallery walls,
+            and thoughtful gatherings come together in a soft, welcoming atmosphere.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#visit" data-i18n="hero.primary">Plan Your Visit</a>
+            <a class="button button-secondary" href="#moments" data-i18n="hero.secondary">Explore the Space</a>
+          </div>
+
+          <ul class="hero-notes" aria-label="Highlights">
+            <li>
+              <strong data-i18n="hero.note1Title">Specialty coffee</strong>
+              <span data-i18n="hero.note1Text">Warm drinks, soft bites, and a slower rhythm.</span>
+            </li>
+            <li>
+              <strong data-i18n="hero.note2Title">Art gallery corners</strong>
+              <span data-i18n="hero.note2Text">A room that gives paintings, objects, and textures space to speak.</span>
+            </li>
+            <li>
+              <strong data-i18n="hero.note3Title">Small elegant events</strong>
+              <span data-i18n="hero.note3Text">Made for intimate launches, creative nights, and private gatherings.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal">
+          <article class="hero-media-shell">
+            <video
+              class="hero-intro-video media-autoplay"
+              src="assets/intro-video.mp4"
+              poster="assets/storefront.jpg"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+            <div class="hero-media-overlay">
+              <p class="card-label" data-i18n="hero.stageLabel">Introduction</p>
+              <h2 data-i18n="hero.stageTitle">A cafe and art gallery designed to feel cinematic, calm, and close-knit.</h2>
+              <p data-i18n="hero.stageText">
+                The opening impression stays light and atmospheric, with motion in the background
+                so the mood feels alive without overpowering the page.
+              </p>
+            </div>
+          </article>
+
+          <div class="hero-side-grid">
+            <article class="hero-mini-card">
+              <img
+                src="assets/gallery-lounge.jpg"
+                alt="Gallery lounge corner at Tarfay"
+                loading="lazy"
+              />
+              <div class="hero-mini-copy">
+                <span data-i18n="hero.stack1Label">Gallery feeling</span>
+                <strong data-i18n="hero.stack1Text">Paintings, color, and seating arranged like a lived-in art room.</strong>
+              </div>
+            </article>
+
+            <article class="hero-mini-card hero-mini-card-soft">
+              <img
+                src="assets/storefront.jpg"
+                alt="Tarfay storefront"
+                loading="lazy"
+              />
+              <div class="hero-mini-copy">
+                <span data-i18n="hero.stack2Label">Neighborhood destination</span>
+                <strong data-i18n="hero.stack2Text">A storefront that immediately tells visitors coffee and creativity live here.</strong>
+              </div>
+            </article>
+          </div>
+
+          <div class="hero-accent-card">
+            <span data-i18n="hero.accentLabel">Saudi-owned</span>
+            <strong data-i18n="hero.accentTitle">Coffee. Canvas. Community.</strong>
+            <p data-i18n="hero.accentText">
+              Intimate in scale, rich in atmosphere, and ready for thoughtful events.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="founder" class="section founder">
+        <div class="founder-layout">
+          <article class="founder-intro reveal">
+            <p class="eyebrow" data-i18n="founder.eyebrow">Founder & CEO</p>
+            <h2 data-i18n="founder.title">A message from the young Saudi founder behind Tarfay.</h2>
+            <p data-i18n="founder.text">
+              Tarfay was shaped as more than a cafe. It was imagined as a cultural room in Al Khobar,
+              where coffee, local creativity, and hospitality could feel beautifully connected.
+            </p>
+
+            <div class="founder-highlights">
+              <div>
+                <span data-i18n="founder.point1Label">Identity</span>
+                <strong data-i18n="founder.point1Text">A Saudi-founded coffee house with an art-led point of view.</strong>
+              </div>
+              <div>
+                <span data-i18n="founder.point2Label">Atmosphere</span>
+                <strong data-i18n="founder.point2Text">Warm, elegant, and intentionally intimate rather than oversized.</strong>
+              </div>
+            </div>
+          </article>
+
+          <blockquote class="founder-message reveal">
+            <p data-i18n="founder.quote">
+              "I wanted Tarfay to feel like a beautiful pause in the city. A place where specialty coffee,
+              local creativity, and gentle hospitality could meet with sincerity."
+            </p>
+            <footer data-i18n="founder.footer">Founder & CEO, Tarfay</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <section id="story" class="section story">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="story.eyebrow">About Tarfay</p>
+          <h2 data-i18n="story.title">A coffee shop with gallery energy and event-ready warmth.</h2>
+          <p data-i18n="story.text">
+            The experience is built around three layers: specialty coffee, curated visual culture,
+            and intimate gatherings that feel personal from the first minute.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-card story-card-photo reveal">
+            <img src="assets/cafe-lifestyle.jpg" alt="Coffee cups at Tarfay" loading="lazy" />
+            <div class="story-card-copy">
+              <p class="panel-kicker" data-i18n="story.card1Label">Coffee first</p>
+              <h3 data-i18n="story.card1Title">A place to settle into the cup in your hand.</h3>
+              <p data-i18n="story.card1Text">
+                Drinks and bites are part of the emotional experience, not just the menu.
+              </p>
+            </div>
+          </article>
+
+          <article class="story-card reveal">
+            <p class="panel-kicker" data-i18n="story.card2Label">Gallery layer</p>
+            <h3 data-i18n="story.card2Title">Walls, objects, and corners that feel curated.</h3>
+            <p data-i18n="story.card2Text">
+              Paintings, collectible details, and tactile styling make the room feel like a small exhibition.
+            </p>
+          </article>
+
+          <article class="story-card story-card-dark reveal">
+            <p class="panel-kicker" data-i18n="story.card3Label">Event mood</p>
+            <h3 data-i18n="story.card3Title">Best for elegant small-scale gatherings.</h3>
+            <p data-i18n="story.card3Text">
+              Tarfay is not a large venue, which makes launches, artist evenings, and private meetups feel warm and memorable.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="menu" class="section menu">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="menu.eyebrow">Signature Menu</p>
+          <h2 data-i18n="menu.title">Specialty drinks and soft bites for slow afternoons.</h2>
+        </div>
+
+        <div class="menu-layout">
+          <article class="menu-card reveal">
+            <p class="menu-label" data-i18n="menu.group1">Coffee Rituals</p>
+            <ul class="menu-list">
+              <li>
+                <div>
+                  <strong data-i18n="menu.item1Name">Saffron Latte</strong>
+                  <span data-i18n="menu.item1Text">Velvety milk, floral sweetness, warm spice.</span>
+                </div>
+                <b data-i18n="menu.item1Price">22 SAR</b>
+              </li>
+              <li>
+                <div>
+                  <strong data-i18n="menu.item2Name">Gallery Flat White</strong>
+                  <span data-i18n="menu.item2Text">Balanced espresso with a soft chocolate finish.</span>
+                </div>
+                <b data-i18n="menu.item2Price">19 SAR</b>
+              </li>
+              <li>
+                <div>
+                  <strong data-i18n="menu.item3Name">Honey Cortado</strong>
+                  <span data-i18n="menu.item3Text">Short, silky, and finished with amber sweetness.</span>
+                </div>
+                <b data-i18n="menu.item3Price">18 SAR</b>
+              </li>
+            </ul>
+          </article>
+
+          <article class="menu-card reveal">
+            <p class="menu-label" data-i18n="menu.group2">Gallery Evenings</p>
+            <ul class="menu-list">
+              <li>
+                <div>
+                  <strong data-i18n="menu.item4Name">Cardamom Mocha</strong>
+                  <span data-i18n="menu.item4Text">Dark cocoa lifted by fragrant spice.</span>
+                </div>
+                <b data-i18n="menu.item4Price">24 SAR</b>
+              </li>
+              <li>
+                <div>
+                  <strong data-i18n="menu.item5Name">Citrus Cold Brew</strong>
+                  <span data-i18n="menu.item5Text">Bright, crisp, and quietly refreshing.</span>
+                </div>
+                <b data-i18n="menu.item5Price">21 SAR</b>
+              </li>
+              <li>
+                <div>
+                  <strong data-i18n="menu.item6Name">Vanilla Basque Slice</strong>
+                  <span data-i18n="menu.item6Text">Creamy, toasted, and made to share.</span>
+                </div>
+                <b data-i18n="menu.item6Price">17 SAR</b>
+              </li>
+            </ul>
+          </article>
+
+          <aside class="menu-feature reveal">
+            <p class="menu-feature-kicker" data-i18n="menu.featureKicker">Designed for the room</p>
+            <h3 data-i18n="menu.featureTitle">
+              The menu should feel as layered as the atmosphere around it.
+            </h3>
+            <p data-i18n="menu.featureText">
+              Use this section as the base for your real offerings, seasonal specials, and event-night pairings.
+            </p>
+            <a
+              class="text-link"
+              href="https://www.instagram.com/tarfay.sa/"
+              target="_blank"
+              rel="noreferrer"
+              data-i18n="menu.featureLink"
+            >
+              See the latest on Instagram
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery">
+        <div class="gallery-copy reveal">
+          <p class="eyebrow" data-i18n="gallery.eyebrow">Cafe + Gallery</p>
+          <h2 data-i18n="gallery.title">A compact space that still feels visually rich.</h2>
+          <p data-i18n="gallery.text">
+            Tarfay blends the intimacy of a neighborhood coffee bar with the curation of a small gallery.
+            It invites guests to notice paintings, objects, textures, and people as part of one experience.
+          </p>
+
+          <div class="gallery-points">
+            <div>
+              <strong data-i18n="gallery.point1Title">Rotating displays</strong>
+              <p data-i18n="gallery.point1Text">Highlight local artists, small collections, and changing visual stories.</p>
+            </div>
+            <div>
+              <strong data-i18n="gallery.point2Title">Lived-in corners</strong>
+              <p data-i18n="gallery.point2Text">Seating is arranged to feel personal, artistic, and easy to return to.</p>
+            </div>
+            <div>
+              <strong data-i18n="gallery.point3Title">Creative hospitality</strong>
+              <p data-i18n="gallery.point3Text">Coffee service and visual identity work together instead of feeling separate.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-collage">
+          <article class="gallery-frame gallery-frame-large reveal">
+            <img src="assets/gallery-lounge.jpg" alt="Tarfay art gallery lounge" loading="lazy" />
+            <div class="gallery-frame-copy">
+              <span data-i18n="gallery.frame1Label">Art corner</span>
+              <strong data-i18n="gallery.frame1Text">A lounge that reads like a small exhibition room.</strong>
+            </div>
+          </article>
+
+          <article class="gallery-frame reveal">
+            <img src="assets/event-detail.jpg" alt="Art and design details at Tarfay" loading="lazy" />
+            <div class="gallery-frame-copy">
+              <span data-i18n="gallery.frame2Label">Creative details</span>
+              <strong data-i18n="gallery.frame2Text">Objects and artist-made touches that stay in memory.</strong>
+            </div>
+          </article>
+
+          <article class="gallery-frame reveal">
+            <img src="assets/storefront.jpg" alt="Tarfay storefront in Al Khobar" loading="lazy" />
+            <div class="gallery-frame-copy">
+              <span data-i18n="gallery.frame3Label">Street presence</span>
+              <strong data-i18n="gallery.frame3Text">From outside, the brand already feels like coffee and creativity together.</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="moments" class="section moments">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="moments.eyebrow">Real Moments</p>
+          <h2 data-i18n="moments.title">Inside Tarfay: coffee, gallery corners, and moving atmosphere.</h2>
+          <p data-i18n="moments.text">
+            These cards use your local photos and videos so the website feels grounded in the real space,
+            while still pointing people to Instagram and Google Maps.
+          </p>
+        </div>
+
+        <div class="moments-layout">
+          <div id="showcase-grid" class="moments-grid" aria-live="polite"></div>
+
+          <aside class="moments-sidebar reveal">
+            <p class="eyebrow" data-i18n="moments.sidebarEyebrow">Visit & Follow</p>
+            <h3 data-i18n="moments.sidebarTitle">A softer first impression before someone even arrives.</h3>
+            <p data-i18n="moments.sidebarText">
+              The showcase on the left captures the intimacy of the space, while this card keeps your location and social presence easy to reach.
+            </p>
+
+            <a
+              class="map-card"
+              href="https://www.google.com/maps?um=1&ie=UTF-8&fb=1&gl=sa&sa=X&geocode=Kauvwd-O6Uk-MW5kwUWX3F6F&daddr=Prince+Nasser+St,+Al+Khobar+Al+Shamalia,+Al+Khobar+34427"
+              target="_blank"
+              rel="noreferrer"
+              data-location-link
+            >
+              <img
+                id="location-map-image"
+                src="assets/location-map.jpg"
+                alt="Map preview of Tarfay on Prince Nasser Street in Al Khobar"
+                loading="lazy"
+              />
+              <div class="map-card-body">
+                <span data-i18n="moments.mapLabel">Google Maps</span>
+                <strong data-i18n="moments.mapTitle">Prince Nasser St, Al Khobar Al Shamalia</strong>
+              </div>
+            </a>
+
+            <div class="moments-stats">
+              <div>
+                <span data-i18n="moments.instagramLabel">Instagram</span>
+                <strong>@tarfay.sa</strong>
+              </div>
+              <div>
+                <span data-i18n="moments.phoneLabel">Phone</span>
+                <strong data-location-phone-text>+966 53 679 0695</strong>
+              </div>
+            </div>
+
+            <div class="visit-actions">
+              <a
+                class="button button-primary"
+                href="https://www.instagram.com/tarfay.sa/"
+                target="_blank"
+                rel="noreferrer"
+                data-i18n="moments.openInstagram"
+              >
+                Open Instagram
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://www.google.com/maps?um=1&ie=UTF-8&fb=1&gl=sa&sa=X&geocode=Kauvwd-O6Uk-MW5kwUWX3F6F&daddr=Prince+Nasser+St,+Al+Khobar+Al+Shamalia,+Al+Khobar+34427"
+                target="_blank"
+                rel="noreferrer"
+                data-location-link
+                data-i18n="moments.openMaps"
+              >
+                Open Maps
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section events">
+        <div class="events-layout">
+          <article class="event-stage reveal">
+            <img src="assets/event-table.jpg" alt="Event styling at Tarfay" loading="lazy" />
+            <div class="event-stage-copy">
+              <p class="eyebrow" data-i18n="events.eyebrow">Events & Gatherings</p>
+              <h2 data-i18n="events.title">Made for intimate events, not oversized crowds.</h2>
+              <p data-i18n="events.text">
+                That smaller scale is part of the charm. Artist talks, launch evenings, Ramadan tables,
+                and private gatherings can feel warm, elegant, and genuinely personal here.
+              </p>
+            </div>
+          </article>
+
+          <div class="event-points reveal">
+            <div>
+              <strong data-i18n="events.point1Title">Best fit</strong>
+              <p data-i18n="events.point1Text">Creative gatherings, small celebrations, artist moments, and curated seasonal experiences.</p>
+            </div>
+            <div>
+              <strong data-i18n="events.point2Title">Visual mood</strong>
+              <p data-i18n="events.point2Text">Decor, flowers, table styling, and artwork can transform the room without losing its intimacy.</p>
+            </div>
+            <div>
+              <strong data-i18n="events.point3Title">Guest experience</strong>
+              <p data-i18n="events.point3Text">People feel hosted, close to the details, and connected to the purpose of the event.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="visit" class="section visit">
+        <div class="visit-card reveal">
+          <div>
+            <p class="eyebrow" data-i18n="visit.eyebrow">Visit Tarfay</p>
+            <h2 data-i18n="visit.title">Meet us in Al Khobar.</h2>
+            <p data-i18n="visit.text">
+              Find us on Prince Nasser Street in Al Khobar Al Shamalia for coffee,
+              conversation, art, and a gallery-inspired pause from the rush.
+            </p>
+          </div>
+
+          <div>
+            <div class="visit-details">
+              <div>
+                <span data-i18n="visit.addressLabel">Address</span>
+                <p data-i18n="visit.addressText">Prince Nasser St, Al Khobar Al Shamalia, Al Khobar 34427</p>
+              </div>
+              <div>
+                <span data-i18n="visit.phoneLabel">Phone</span>
+                <p><a data-location-phone-link href="tel:+966536790695">+966 53 679 0695</a></p>
+              </div>
+              <div>
+                <span data-i18n="visit.instagramLabel">Instagram</span>
+                <p>
+                  <a
+                    href="https://www.instagram.com/tarfay.sa/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    @tarfay.sa
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="visit-actions">
+              <a
+                class="button button-primary"
+                href="https://www.google.com/maps?um=1&ie=UTF-8&fb=1&gl=sa&sa=X&geocode=Kauvwd-O6Uk-MW5kwUWX3F6F&daddr=Prince+Nasser+St,+Al+Khobar+Al+Shamalia,+Al+Khobar+34427"
+                target="_blank"
+                rel="noreferrer"
+                data-location-link
+                data-i18n="visit.openMaps"
+              >
+                Open in Maps
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://www.instagram.com/tarfay.sa/"
+                target="_blank"
+                rel="noreferrer"
+                data-i18n="visit.followInstagram"
+              >
+                Follow on Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Tarfay Coffee & Art House</p>
+      <p data-i18n="footer.line2">Crafted to introduce a warm cafe, art gallery, and intimate event space.</p>
+    </footer>
+
+    <script src="media.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
