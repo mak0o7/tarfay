@@ -1,7 +1,9 @@
-const header = document.querySelector(".site-header");
+﻿const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
 const showcaseGrid = document.querySelector("#showcase-grid");
+const collectionGrid = document.querySelector("#collection-grid");
+const collectionFilterButtons = document.querySelectorAll("[data-collection-filter]");
 const languageButtons = document.querySelectorAll("[data-lang-switch]");
 const descriptionTag = document.querySelector("#site-description");
 const mapImage = document.querySelector("#location-map-image");
@@ -84,6 +86,24 @@ const translations = {
       card3Text:
         "Tarfay is not a large venue, which makes launches, artist evenings, and private meetups feel warm and memorable."
     },
+    culture: {
+      eyebrow: "Art & Culture",
+      title: "A small cultural room shaped by coffee, color, and local creative energy.",
+      text:
+        "Tarfay is not trying to be a giant venue. Its strength is a more intimate cultural scale where visual art, conversation, and hospitality can sit close together.",
+      column1Title: "Living walls",
+      column1Text:
+        "Artwork is not treated as decoration alone. It becomes part of how guests move, pause, and remember the room.",
+      column2Title: "Saudi creative voice",
+      column2Text:
+        "The space can hold local stories, regional references, and artist-led details without losing the calm feeling of a cafe.",
+      photo1Label: "Inside the room",
+      photo1Text: "Color, paintings, and tables come together like a neighborhood salon.",
+      photo2Label: "Coffee detail",
+      photo2Text: "Even the cup can carry a sense of occasion and visual identity.",
+      noteLabel: "Cultural rhythm",
+      noteTitle: "Exhibitions, coffee conversations, seasonal styling, and soft community gatherings."
+    },
     menu: {
       eyebrow: "Signature Menu",
       title: "Specialty drinks and soft bites for slow afternoons.",
@@ -113,6 +133,20 @@ const translations = {
         "Use this section as the base for your real offerings, seasonal specials, and event-night pairings.",
       featureLink: "See the latest on Instagram"
     },
+    coffee: {
+      eyebrow: "Coffee Story",
+      title: "Coffee here should feel intentional, comforting, and beautifully served.",
+      text:
+        "From the first cup to the last detail on the saucer, the coffee program can support the emotional tone of the space: warm, photogenic, and easy to return to.",
+      point1Title: "Ritual",
+      point1Text: "A service style that feels slow enough for conversation and quiet appreciation.",
+      point2Title: "Signature profile",
+      point2Text:
+        "Drinks can blend familiar comfort with regional touches such as saffron, cardamom, or floral notes.",
+      point3Title: "Visual finish",
+      point3Text:
+        "Presentation matters because the coffee is part of the gallery-like experience, not separate from it."
+    },
     gallery: {
       eyebrow: "Cafe + Gallery",
       title: "A compact space that still feels visually rich.",
@@ -130,6 +164,43 @@ const translations = {
       frame2Text: "Objects and artist-made touches that stay in memory.",
       frame3Label: "Street presence",
       frame3Text: "From outside, the brand already feels like coffee and creativity together."
+    },
+    collection: {
+      eyebrow: "Coffee & Gallery Details",
+      title: "A visual wall of drinks, details, styling, and art objects.",
+      text:
+        "This gallery uses the image library across themed moments so visitors can feel both the coffee menu and the cultural identity of the space.",
+      filterAll: "All",
+      filterMatcha: "Matcha",
+      filterCoffee: "Coffee",
+      filterPoundCake: "Pound cake",
+      filterByOwner: "By owner",
+      filterVideos: "Videos",
+      openImage: "Open image",
+      openVideo: "Open video",
+      close: "Close viewer",
+      item1Label: "Latte art",
+      item1Title: "Soft pours and quiet coffee ritual.",
+      item2Label: "Matcha",
+      item2Title: "Colorful drinks that feel playful and collectible.",
+      item3Label: "Mocha moment",
+      item3Title: "A tray, a cup, and a styled pause in the day.",
+      item4Label: "Seasonal decor",
+      item4Title: "Special occasions become part of the visual identity.",
+      item5Label: "Interior details",
+      item5Title: "Hanging decor, paper forms, and small installation moments.",
+      item6Label: "Creative objects",
+      item6Title: "Artist-made pieces that extend the gallery feeling beyond the wall.",
+      item7Label: "Pound cake",
+      item7Title: "A quiet table pairing of cake, coffee, and sketchbook mood.",
+      item8Label: "Art lounge",
+      item8Title: "A lived-in corner where conversation and color share the room.",
+      item9Label: "Intro video",
+      item9Title: "A moving first impression of the cafe-gallery atmosphere.",
+      item10Label: "Event video",
+      item10Title: "A closer look at intimate event styling inside the space.",
+      item11Label: "Gallery video",
+      item11Title: "Motion, decor, and visual rhythm from inside Tarfay."
     },
     moments: {
       eyebrow: "Real Moments",
@@ -171,7 +242,19 @@ const translations = {
       point2Title: "Visual mood",
       point2Text: "Decor, flowers, table styling, and artwork can transform the room without losing its intimacy.",
       point3Title: "Guest experience",
-      point3Text: "People feel hosted, close to the details, and connected to the purpose of the event."
+      point3Text: "People feel hosted, close to the details, and connected to the purpose of the event.",
+      card1Label: "Art nights",
+      card1Title: "Artist talks, openings, and small exhibition moments.",
+      card1Text:
+        "The room is well suited to intimate art gatherings where guests can move between coffee, conversation, and the work on display.",
+      card2Label: "Seasonal styling",
+      card2Title: "Ramadan tables, holiday decor, and branded activations.",
+      card2Text:
+        "Events feel memorable because the decor can transform the cafe without losing its warmth.",
+      card3Label: "Creative community",
+      card3Title: "Workshops, meetups, and culture-led collaborations.",
+      card3Text:
+        "The best events here feel curated and human-scaled rather than loud or overproduced."
     },
     visit: {
       eyebrow: "Visit Tarfay",
@@ -264,6 +347,24 @@ const translations = {
       card3Text:
         "ترفاي ليس مساحة كبيرة، وهذا ما يجعل الإطلاقات والأمسيات الفنية واللقاءات الخاصة أكثر دفئاً وذكراً."
     },
+    culture: {
+      eyebrow: "الفن والثقافة",
+      title: "غرفة ثقافية صغيرة تتشكل بالقهوة واللون والطاقة الإبداعية المحلية.",
+      text:
+        "ترفاي لا يحاول أن يكون مساحة ضخمة. قوته في حجمه الحميمي الذي يسمح للفن البصري والحوار والضيافة أن يجتمعوا بالقرب من بعضهم البعض.",
+      column1Title: "جدران حيّة",
+      column1Text:
+        "الأعمال الفنية ليست مجرد زينة. إنها جزء من الطريقة التي يتحرك بها الضيف ويتوقف ويتذكر بها المكان.",
+      column2Title: "صوت إبداعي سعودي",
+      column2Text:
+        "يمكن للمساحة أن تحمل قصصاً محلية وإشارات ثقافية وتفاصيل يقودها الفنانون من دون أن تفقد هدوء المقهى.",
+      photo1Label: "داخل المساحة",
+      photo1Text: "الألوان واللوحات والطاولات تجتمع كأنها صالون حيّ داخل الحي.",
+      photo2Label: "تفصيل قهوة",
+      photo2Text: "حتى الكوب نفسه يمكن أن يحمل إحساس المناسبة والهوية البصرية.",
+      noteLabel: "الإيقاع الثقافي",
+      noteTitle: "معارض، وحوارات على القهوة، وتنسيقات موسمية، وتجمعات مجتمعية ناعمة."
+    },
     menu: {
       eyebrow: "قائمة مختارة",
       title: "مشروبات خاصة ولقيمات ناعمة لأمسيات هادئة.",
@@ -293,6 +394,20 @@ const translations = {
         "يمكن استخدام هذا القسم كأساس لقائمتك الحقيقية وعروضك الموسمية وتجارب ليالي الفعاليات.",
       featureLink: "شاهد الجديد على إنستغرام"
     },
+    coffee: {
+      eyebrow: "حكاية القهوة",
+      title: "يجب أن تشعر القهوة هنا بأنها مقصودة، مريحة، ومقدمة بجمال.",
+      text:
+        "من أول كوب إلى آخر تفصيلة على الصحن، يمكن لبرنامج القهوة أن يدعم النبرة العاطفية للمكان: دفء، وصورة جميلة، وسهولة في العودة إليه.",
+      point1Title: "الطقس",
+      point1Text: "أسلوب خدمة بطيء بما يكفي للحوار والتأمل والجلوس الهادئ.",
+      point2Title: "البصمة الخاصة",
+      point2Text:
+        "يمكن للمشروبات أن تجمع بين الراحة المألوفة ولمسات محلية مثل الزعفران أو الهيل أو النكهات الزهرية.",
+      point3Title: "اللمسة البصرية",
+      point3Text:
+        "طريقة التقديم مهمة لأن القهوة جزء من التجربة الشبيهة بالمعرض وليست شيئاً منفصلاً عنها."
+    },
     gallery: {
       eyebrow: "المقهى + المعرض",
       title: "مساحة صغيرة في حجمها لكنها غنية بصرياً.",
@@ -310,6 +425,43 @@ const translations = {
       frame2Text: "قطع ولمسات فنية تبقى في الذاكرة.",
       frame3Label: "حضور الشارع",
       frame3Text: "حتى من الخارج تشعر العلامة بأنها تجمع القهوة والإبداع."
+    },
+    collection: {
+      eyebrow: "تفاصيل القهوة والمعرض",
+      title: "جدار بصري للمشروبات والتفاصيل والتنسيقات والقطع الفنية.",
+      text:
+        "يعرض هذا القسم مكتبة الصور في لحظات مصنفة حتى يشعر الزائر بالقائمة وبالهوية الثقافية للمكان معاً.",
+      filterAll: "الكل",
+      filterMatcha: "ماتشا",
+      filterCoffee: "قهوة",
+      filterPoundCake: "باوند كيك",
+      filterByOwner: "باختيار المالكة",
+      filterVideos: "فيديوهات",
+      openImage: "افتح الصورة",
+      openVideo: "افتح الفيديو",
+      close: "إغلاق العارض",
+      item1Label: "لاتيه آرت",
+      item1Title: "سكب ناعم وطقس قهوة هادئ.",
+      item2Label: "ماتشا",
+      item2Title: "مشروبات ملونة تشعر بأنها مرحة وقابلة للتذكر.",
+      item3Label: "لحظة موكا",
+      item3Title: "صينية وكوب ووقفة منسقة داخل اليوم.",
+      item4Label: "ديكور موسمي",
+      item4Title: "المناسبات الخاصة تصبح جزءاً من الهوية البصرية.",
+      item5Label: "تفاصيل داخلية",
+      item5Title: "عناصر معلقة وأشكال ورقية ولمسات تركيبية صغيرة.",
+      item6Label: "قطع إبداعية",
+      item6Title: "أعمال وقطع فنية تمد إحساس المعرض إلى ما بعد الجدار.",
+      item7Label: "باوند كيك",
+      item7Title: "تنسيق هادئ بين الكيك والقهوة وطاولة تشبه دفتر ملاحظات.",
+      item8Label: "ركن فني",
+      item8Title: "زاوية معيشة يلتقي فيها الحوار مع اللون داخل الغرفة.",
+      item9Label: "فيديو المقدمة",
+      item9Title: "انطباع متحرك عن أجواء المقهى والمعرض.",
+      item10Label: "فيديو فعالية",
+      item10Title: "نظرة أقرب إلى تنسيق الفعاليات الحميمة داخل المكان.",
+      item11Label: "فيديو المعرض",
+      item11Title: "حركة وديكور وإيقاع بصري من داخل ترفاي."
     },
     moments: {
       eyebrow: "لحظات حقيقية",
@@ -351,7 +503,19 @@ const translations = {
       point2Title: "المزاج البصري",
       point2Text: "الديكور والزهور وتنسيق الطاولات والأعمال الفنية يمكنها تحويل المساحة من دون أن تفقد حميميتها.",
       point3Title: "تجربة الضيف",
-      point3Text: "يشعر الناس بأنهم مُحتفى بهم وقريبون من التفاصيل ومتصلون بهدف الفعالية."
+      point3Text: "يشعر الناس بأنهم مُحتفى بهم وقريبون من التفاصيل ومتصلون بهدف الفعالية.",
+      card1Label: "ليالي الفن",
+      card1Title: "أحاديث الفنانين والافتتاحات واللحظات المعرضية الصغيرة.",
+      card1Text:
+        "المكان مناسب للتجمعات الفنية الحميمة التي ينتقل فيها الضيف بين القهوة والحوار والعمل المعروض بسهولة.",
+      card2Label: "التنسيق الموسمي",
+      card2Title: "موائد رمضان والديكور الموسمي والتجارب ذات الهوية الخاصة.",
+      card2Text:
+        "تصبح الفعالية أكثر رسوخاً في الذاكرة لأن الديكور قادر على تحويل المقهى من دون أن يفقد دفئه.",
+      card3Label: "المجتمع الإبداعي",
+      card3Title: "ورش ولقاءات وتعاونات تقودها الثقافة.",
+      card3Text:
+        "أجمل الفعاليات هنا هي التي تشعر بأنها منسقة وعلى مقياس إنساني بعيداً عن الصخب أو المبالغة."
     },
     visit: {
       eyebrow: "زيارة ترفاي",
@@ -370,6 +534,273 @@ const translations = {
     }
   }
 };
+
+const collectionItems = [
+  {
+    kind: "image",
+    image: "assets/instagram-05.jpg",
+    titleKey: "collection.item1Title",
+    labelKey: "collection.item1Label",
+    categories: ["coffee"]
+  },
+  {
+    kind: "image",
+    image: "assets/instagram-01.jpg",
+    titleKey: "collection.item2Title",
+    labelKey: "collection.item2Label",
+    categories: ["matcha", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/instagram-03.jpg",
+    titleKey: "collection.item3Title",
+    labelKey: "collection.item3Label",
+    categories: ["coffee"]
+  },
+  {
+    kind: "image",
+    image: "assets/instagram-04.jpg",
+    titleKey: "collection.item4Title",
+    labelKey: "collection.item4Label",
+    categories: ["by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/instagram-06.jpg",
+    titleKey: "collection.item5Title",
+    labelKey: "collection.item5Label",
+    categories: ["by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/event-merch.jpg",
+    titleKey: "collection.item6Title",
+    labelKey: "collection.item6Label",
+    categories: ["by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/pound-cake.jpg",
+    titleKey: "collection.item7Title",
+    labelKey: "collection.item7Label",
+    categories: ["pound-cake", "coffee"]
+  },
+  {
+    kind: "image",
+    image: "assets/instagram-02.jpg",
+    titleKey: "collection.item8Title",
+    labelKey: "collection.item8Label",
+    categories: ["coffee", "by-owner"]
+  },
+  {
+    kind: "video",
+    video: "assets/intro-video.mp4",
+    image: "assets/storefront.jpg",
+    titleKey: "collection.item9Title",
+    labelKey: "collection.item9Label",
+    categories: ["videos"]
+  },
+  {
+    kind: "video",
+    video: "assets/events-video.mp4",
+    image: "assets/event-table.jpg",
+    titleKey: "collection.item10Title",
+    labelKey: "collection.item10Label",
+    categories: ["videos"]
+  },
+  {
+    kind: "video",
+    video: "assets/gallery-video.mp4",
+    image: "assets/event-detail.jpg",
+    titleKey: "collection.item11Title",
+    labelKey: "collection.item11Label",
+    categories: ["videos", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/matcha-heart.jpeg",
+    label: {
+      en: "Matcha signature",
+      ar: "ماتشا مميزة"
+    },
+    title: {
+      en: "A playful matcha moment with strong brand color and personality.",
+      ar: "لحظة ماتشا مرحة تحمل لون العلامة وشخصيتها بوضوح."
+    },
+    categories: ["matcha", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/matcha-minimal.jpeg",
+    label: {
+      en: "Matcha styling",
+      ar: "تنسيق الماتشا"
+    },
+    title: {
+      en: "Minimal product styling that feels young, collectible, and social.",
+      ar: "تنسيق بصري بسيط يشعر الزائر بأنه شبابي وقابل للمشاركة والتذكر."
+    },
+    categories: ["matcha", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/pour-over-detail.jpg",
+    label: {
+      en: "Pour-over detail",
+      ar: "تفصيلة تحضير"
+    },
+    title: {
+      en: "Brewing becomes part of the performance inside the room.",
+      ar: "يتحول تحضير القهوة إلى جزء من المشهد داخل المكان."
+    },
+    categories: ["coffee", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/art-workshop.jpeg",
+    label: {
+      en: "Art workshop",
+      ar: "ورشة فنية"
+    },
+    title: {
+      en: "Hands-on creative sessions deepen the gallery identity of Tarfay.",
+      ar: "الجلسات الإبداعية العملية تعمق هوية ترفاي كمساحة فنية."
+    },
+    categories: ["by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/latte-flower.jpeg",
+    label: {
+      en: "Latte flower",
+      ar: "لاتيه آرت"
+    },
+    title: {
+      en: "A clean cup and a floral pour keep the coffee story elegant.",
+      ar: "كوب نظيف ورسمة ناعمة يحافظان على حكاية القهوة بأناقة."
+    },
+    categories: ["coffee"]
+  },
+  {
+    kind: "image",
+    image: "assets/autumn-latte.jpeg",
+    label: {
+      en: "Seasonal latte",
+      ar: "لاتيه موسمي"
+    },
+    title: {
+      en: "Seasonal flavors and table styling make even one drink feel event-ready.",
+      ar: "النكهات الموسمية وتنسيق الطاولة يجعلان حتى المشروب الواحد جاهزاً للمناسبة."
+    },
+    categories: ["coffee", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/cocoa-window.jpeg",
+    label: {
+      en: "Coffee & cake",
+      ar: "قهوة وكيك"
+    },
+    title: {
+      en: "A window-side cup with cake brings out the softer neighborhood feeling.",
+      ar: "كوب بجانب النافذة مع الكيك يبرز الإحساس الحميمي للمكان داخل الحي."
+    },
+    categories: ["coffee", "pound-cake", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/art-table.jpeg",
+    label: {
+      en: "Sketchbook table",
+      ar: "طاولة الرسم"
+    },
+    title: {
+      en: "Coffee, pound cake, watercolor, and notes on one creative table.",
+      ar: "قهوة وباوند كيك وألوان مائية وملاحظات على طاولة إبداعية واحدة."
+    },
+    categories: ["coffee", "pound-cake", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/streetfront-gallery.jpeg",
+    label: {
+      en: "Streetfront",
+      ar: "الواجهة"
+    },
+    title: {
+      en: "From the street, the shop already reads as coffee, art, and youth culture.",
+      ar: "حتى من الشارع تبدو الواجهة وكأنها تجمع بين القهوة والفن والثقافة الشبابية."
+    },
+    categories: ["by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/pour-over-bar.jpeg",
+    label: {
+      en: "Bar ritual",
+      ar: "طقس البار"
+    },
+    title: {
+      en: "The bar becomes a live coffee stage during service hours.",
+      ar: "يتحول البار إلى مسرح حي للقهوة خلال ساعات الخدمة."
+    },
+    categories: ["coffee", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/branded-cups.jpeg",
+    label: {
+      en: "Branded cups",
+      ar: "أكواب العلامة"
+    },
+    title: {
+      en: "Even the cups carry the playful visual identity of the house.",
+      ar: "حتى الأكواب نفسها تحمل الهوية البصرية المرحة للمكان."
+    },
+    categories: ["coffee", "by-owner"]
+  },
+  {
+    kind: "image",
+    image: "assets/hot-chocolate.jpeg",
+    label: {
+      en: "Hot chocolate",
+      ar: "هوت شوكليت"
+    },
+    title: {
+      en: "Comfort drinks can sit beside the coffee menu without breaking the mood.",
+      ar: "يمكن للمشروبات المريحة أن تعيش بجوار قائمة القهوة من دون أن تكسر أجواء المكان."
+    },
+    categories: ["coffee", "by-owner"]
+  },
+  {
+    kind: "video",
+    video: "assets/instagram-02.mp4",
+    image: "assets/instagram-02.jpg",
+    label: {
+      en: "Interior reel",
+      ar: "ريل داخلي"
+    },
+    title: {
+      en: "A moving glance across the colorful interior and gallery atmosphere.",
+      ar: "نظرة متحركة عبر الداخل الملون وأجواء المعرض داخل ترفاي."
+    },
+    categories: ["videos", "by-owner"]
+  },
+  {
+    kind: "video",
+    video: "assets/instagram-06.mp4",
+    image: "assets/instagram-06.jpg",
+    label: {
+      en: "Decor reel",
+      ar: "ريل الديكور"
+    },
+    title: {
+      en: "Small decor gestures and visual rhythm captured in motion.",
+      ar: "حركات الديكور الصغيرة والإيقاع البصري كما يظهران في الفيديو."
+    },
+    categories: ["videos", "by-owner"]
+  }
+];
 
 if (navToggle && header) {
   navToggle.addEventListener("click", () => {
@@ -480,6 +911,20 @@ function getTranslation(language, key) {
   return key.split(".").reduce((value, segment) => value?.[segment], translations[language]);
 }
 
+function getCollectionText(item, field) {
+  const directValue = item[field];
+  if (typeof directValue === "string") {
+    return directValue;
+  }
+
+  if (directValue && typeof directValue === "object") {
+    return directValue[currentLanguage] || directValue.en || "";
+  }
+
+  const key = item[`${field}Key`];
+  return key ? getTranslation(currentLanguage, key) || "" : "";
+}
+
 function attachFallbackSource(element, sources) {
   let sourceIndex = 0;
 
@@ -502,6 +947,9 @@ function createImageElement(source, altText) {
 }
 
 let currentLanguage = getInitialLanguage();
+let currentCollectionFilter = "all";
+let activeViewerItem = null;
+let mediaViewer = null;
 
 function createShowcaseCard(item, index) {
   const copy = translations[currentLanguage].showcase;
@@ -587,6 +1035,172 @@ function renderShowcase() {
   registerVideos(showcaseGrid.querySelectorAll(".media-autoplay"));
 }
 
+function ensureMediaViewer() {
+  if (mediaViewer) {
+    return mediaViewer;
+  }
+
+  const overlay = document.createElement("div");
+  overlay.className = "media-viewer";
+  overlay.setAttribute("aria-hidden", "true");
+  overlay.innerHTML = `
+    <div class="media-viewer-backdrop" data-viewer-close></div>
+    <div class="media-viewer-panel" role="dialog" aria-modal="true" aria-label="Media viewer">
+      <button class="media-viewer-close" type="button" data-viewer-close>
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="media-viewer-content"></div>
+      <div class="media-viewer-caption"></div>
+    </div>
+  `;
+
+  overlay.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLElement && event.target.hasAttribute("data-viewer-close")) {
+      closeMediaViewer();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMediaViewer();
+    }
+  });
+
+  document.body.appendChild(overlay);
+  mediaViewer = overlay;
+  return overlay;
+}
+
+function closeMediaViewer() {
+  if (!mediaViewer) {
+    return;
+  }
+
+  const content = mediaViewer.querySelector(".media-viewer-content");
+  if (content) {
+    content.querySelectorAll("video").forEach((video) => video.pause());
+    content.replaceChildren();
+  }
+
+  mediaViewer.classList.remove("is-open");
+  mediaViewer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("viewer-open");
+  activeViewerItem = null;
+}
+
+function openMediaViewer(item) {
+  const viewer = ensureMediaViewer();
+  const content = viewer.querySelector(".media-viewer-content");
+  const caption = viewer.querySelector(".media-viewer-caption");
+  const closeButton = viewer.querySelector(".media-viewer-close");
+  const copy = translations[currentLanguage].collection;
+
+  if (!content || !caption || !closeButton) {
+    return;
+  }
+
+  activeViewerItem = item;
+  content.replaceChildren();
+
+  if (item.kind === "video" && item.video) {
+    const video = document.createElement("video");
+    video.src = item.video;
+    video.poster = item.image;
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    content.appendChild(video);
+  } else if (item.image) {
+    content.appendChild(createImageElement(item.image, copy.openImage));
+  }
+
+  const label = document.createElement("span");
+  label.className = "media-viewer-label";
+  label.textContent = getCollectionText(item, "label");
+
+  const title = document.createElement("strong");
+  title.textContent = getCollectionText(item, "title");
+
+  caption.replaceChildren(label, title);
+  closeButton.setAttribute("aria-label", copy.close);
+  viewer.classList.add("is-open");
+  viewer.setAttribute("aria-hidden", "false");
+  document.body.classList.add("viewer-open");
+}
+
+function createCollectionCard(item) {
+  const copy = translations[currentLanguage].collection;
+  const article = document.createElement("article");
+  article.className = "collection-card reveal";
+
+  const button = document.createElement("button");
+  button.className = "collection-card-button";
+  button.type = "button";
+  button.setAttribute("aria-label", item.kind === "video" ? copy.openVideo : copy.openImage);
+  button.addEventListener("click", () => {
+    openMediaViewer(item);
+  });
+
+  if (item.kind === "video" && item.video) {
+    const video = document.createElement("video");
+    video.src = item.video;
+    video.poster = item.image;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    video.className = "media-autoplay";
+    video.addEventListener("error", () => {
+      button.replaceChildren(createImageElement(item.image, copy.openVideo));
+    });
+    button.appendChild(video);
+  } else {
+    button.appendChild(createImageElement(item.image, copy.openImage));
+  }
+
+  const overlay = document.createElement("div");
+  overlay.className = "collection-card-copy";
+
+  const badge = document.createElement("span");
+  badge.textContent = getCollectionText(item, "label");
+
+  const title = document.createElement("strong");
+  title.textContent = getCollectionText(item, "title");
+
+  overlay.append(badge, title);
+  button.appendChild(overlay);
+  article.appendChild(button);
+
+  return article;
+}
+
+function renderCollection() {
+  if (!collectionGrid) {
+    return;
+  }
+
+  const items =
+    currentCollectionFilter === "all"
+      ? collectionItems
+      : collectionItems.filter((item) => item.categories.includes(currentCollectionFilter));
+
+  const cards = items.map((item) => createCollectionCard(item));
+  collectionGrid.replaceChildren(...cards);
+  registerReveal(cards);
+  registerVideos(collectionGrid.querySelectorAll(".media-autoplay"));
+}
+
+function setCollectionFilter(filter) {
+  currentCollectionFilter = filter;
+  collectionFilterButtons.forEach((button) => {
+    const isActive = button.getAttribute("data-collection-filter") === filter;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+  renderCollection();
+}
+
 function applyLocationData() {
   const location = window.TARFAY_MEDIA?.location;
 
@@ -653,7 +1267,18 @@ function applyLanguage(language) {
   }
 
   renderShowcase();
+  renderCollection();
+
+  if (activeViewerItem) {
+    openMediaViewer(activeViewerItem);
+  }
 }
+
+collectionFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setCollectionFilter(button.getAttribute("data-collection-filter") || "all");
+  });
+});
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -664,3 +1289,4 @@ languageButtons.forEach((button) => {
 applyLocationData();
 registerVideos(document.querySelectorAll(".media-autoplay"));
 applyLanguage(currentLanguage);
+setCollectionFilter(currentCollectionFilter);

@@ -15,6 +15,9 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -211,7 +214,8 @@
             </div>
           </article>
 
-          <article class="story-card reveal">
+          <article class="story-card story-card-photo reveal">
+            <img src="assets/instagram-02.jpg" alt="Art and decor inside Tarfay" loading="lazy" />
             <p class="panel-kicker" data-i18n="story.card2Label">Gallery layer</p>
             <h3 data-i18n="story.card2Title">Walls, objects, and corners that feel curated.</h3>
             <p data-i18n="story.card2Text">
@@ -219,13 +223,65 @@
             </p>
           </article>
 
-          <article class="story-card story-card-dark reveal">
+          <article class="story-card story-card-dark story-card-photo reveal">
+            <img src="assets/event-table.jpg" alt="Intimate event setup at Tarfay" loading="lazy" />
             <p class="panel-kicker" data-i18n="story.card3Label">Event mood</p>
             <h3 data-i18n="story.card3Title">Best for elegant small-scale gatherings.</h3>
             <p data-i18n="story.card3Text">
               Tarfay is not a large venue, which makes launches, artist evenings, and private meetups feel warm and memorable.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section class="section culture">
+        <div class="culture-layout">
+          <div class="culture-copy reveal">
+            <p class="eyebrow" data-i18n="culture.eyebrow">Art & Culture</p>
+            <h2 data-i18n="culture.title">A small cultural room shaped by coffee, color, and local creative energy.</h2>
+            <p data-i18n="culture.text">
+              Tarfay is not trying to be a giant venue. Its strength is a more intimate cultural scale where
+              visual art, conversation, and hospitality can sit close together.
+            </p>
+
+            <div class="culture-columns">
+              <article>
+                <strong data-i18n="culture.column1Title">Living walls</strong>
+                <p data-i18n="culture.column1Text">
+                  Artwork is not treated as decoration alone. It becomes part of how guests move, pause, and remember the room.
+                </p>
+              </article>
+              <article>
+                <strong data-i18n="culture.column2Title">Saudi creative voice</strong>
+                <p data-i18n="culture.column2Text">
+                  The space can hold local stories, regional references, and artist-led details without losing the calm feeling of a cafe.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="culture-visual">
+            <article class="culture-photo culture-photo-large reveal">
+              <img src="assets/instagram-02.jpg" alt="Art and decor inside Tarfay" loading="lazy" />
+              <div class="culture-photo-copy">
+                <span data-i18n="culture.photo1Label">Inside the room</span>
+                <strong data-i18n="culture.photo1Text">Color, paintings, and tables come together like a neighborhood salon.</strong>
+              </div>
+            </article>
+
+            <article class="culture-photo reveal">
+              <img src="assets/instagram-05.jpg" alt="Latte art served at Tarfay" loading="lazy" />
+              <div class="culture-photo-copy">
+                <span data-i18n="culture.photo2Label">Coffee detail</span>
+                <strong data-i18n="culture.photo2Text">Even the cup can carry a sense of occasion and visual identity.</strong>
+              </div>
+            </article>
+
+            <article class="culture-note reveal">
+              <span data-i18n="culture.noteLabel">Cultural rhythm</span>
+              <strong data-i18n="culture.noteTitle">Exhibitions, coffee conversations, seasonal styling, and soft community gatherings.</strong>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -309,6 +365,36 @@
             </a>
           </aside>
         </div>
+
+        <div class="coffee-editorial">
+          <article class="coffee-editorial-photo reveal">
+            <img src="assets/instagram-05.jpg" alt="Coffee close-up at Tarfay" loading="lazy" />
+          </article>
+
+          <article class="coffee-editorial-copy reveal">
+            <p class="eyebrow" data-i18n="coffee.eyebrow">Coffee Story</p>
+            <h3 data-i18n="coffee.title">Coffee here should feel intentional, comforting, and beautifully served.</h3>
+            <p data-i18n="coffee.text">
+              From the first cup to the last detail on the saucer, the coffee program can support the emotional tone of the space:
+              warm, photogenic, and easy to return to.
+            </p>
+
+            <div class="coffee-points">
+              <div>
+                <strong data-i18n="coffee.point1Title">Ritual</strong>
+                <p data-i18n="coffee.point1Text">A service style that feels slow enough for conversation and quiet appreciation.</p>
+              </div>
+              <div>
+                <strong data-i18n="coffee.point2Title">Signature profile</strong>
+                <p data-i18n="coffee.point2Text">Drinks can blend familiar comfort with regional touches such as saffron, cardamom, or floral notes.</p>
+              </div>
+              <div>
+                <strong data-i18n="coffee.point3Title">Visual finish</strong>
+                <p data-i18n="coffee.point3Text">Presentation matters because the coffee is part of the gallery-like experience, not separate from it.</p>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="gallery" class="section gallery">
@@ -361,6 +447,27 @@
             </div>
           </article>
         </div>
+      </section>
+
+      <section class="section collection">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="collection.eyebrow">Coffee & Gallery Details</p>
+          <h2 data-i18n="collection.title">A visual wall of drinks, details, styling, and art objects.</h2>
+          <p data-i18n="collection.text">
+            This gallery uses the image library across themed moments so visitors can feel both the coffee menu and the cultural identity of the space.
+          </p>
+        </div>
+
+        <div class="collection-toolbar reveal" role="group" aria-label="Gallery filters">
+          <button class="collection-filter is-active" type="button" data-collection-filter="all" data-i18n="collection.filterAll">All</button>
+          <button class="collection-filter" type="button" data-collection-filter="matcha" data-i18n="collection.filterMatcha">Matcha</button>
+          <button class="collection-filter" type="button" data-collection-filter="coffee" data-i18n="collection.filterCoffee">Coffee</button>
+          <button class="collection-filter" type="button" data-collection-filter="pound-cake" data-i18n="collection.filterPoundCake">Pound cake</button>
+          <button class="collection-filter" type="button" data-collection-filter="by-owner" data-i18n="collection.filterByOwner">By owner</button>
+          <button class="collection-filter" type="button" data-collection-filter="videos" data-i18n="collection.filterVideos">Videos</button>
+        </div>
+
+        <div id="collection-grid" class="collection-grid" aria-live="polite"></div>
       </section>
 
       <section id="moments" class="section moments">
@@ -466,6 +573,41 @@
               <p data-i18n="events.point3Text">People feel hosted, close to the details, and connected to the purpose of the event.</p>
             </div>
           </div>
+        </div>
+
+        <div class="event-gallery">
+          <article class="event-card reveal">
+            <img src="assets/gallery-lounge.jpg" alt="Gallery lounge during an art event" loading="lazy" />
+            <div class="event-card-copy">
+              <span data-i18n="events.card1Label">Art nights</span>
+              <strong data-i18n="events.card1Title">Artist talks, openings, and small exhibition moments.</strong>
+              <p data-i18n="events.card1Text">
+                The room is well suited to intimate art gatherings where guests can move between coffee, conversation, and the work on display.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <img src="assets/event-table.jpg" alt="Decorated event setup at Tarfay" loading="lazy" />
+            <div class="event-card-copy">
+              <span data-i18n="events.card2Label">Seasonal styling</span>
+              <strong data-i18n="events.card2Title">Ramadan tables, holiday decor, and branded activations.</strong>
+              <p data-i18n="events.card2Text">
+                Events feel memorable because the decor can transform the cafe without losing its warmth.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <img src="assets/event-merch.jpg" alt="Creative objects and merchandise at Tarfay" loading="lazy" />
+            <div class="event-card-copy">
+              <span data-i18n="events.card3Label">Creative community</span>
+              <strong data-i18n="events.card3Title">Workshops, meetups, and culture-led collaborations.</strong>
+              <p data-i18n="events.card3Text">
+                The best events here feel curated and human-scaled rather than loud or overproduced.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
