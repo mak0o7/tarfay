@@ -53,6 +53,8 @@ const translations = {
       stack1Text: "Paintings, color, and seating arranged like a lived-in art room.",
       stack2Label: "Neighborhood destination",
       stack2Text: "A storefront that immediately tells visitors coffee and creativity live here.",
+      collageLabel: "Little details",
+      collageTitle: "Matcha color, tabletop moments, and soft bites keep the space feeling alive.",
       accentLabel: "Saudi-owned",
       accentTitle: "Coffee. Canvas. Community.",
       accentText: "Intimate in scale, rich in atmosphere, and ready for thoughtful events."
@@ -81,6 +83,10 @@ const translations = {
       card2Label: "Gallery layer",
       card2Title: "Walls, objects, and corners that feel curated.",
       card2Text: "Paintings, collectible details, and tactile styling make the room feel like a small exhibition.",
+      collageLabel: "Visual map",
+      collageTitle: "Storefront scenes, art tables, and workshop moments make the identity feel lived-in.",
+      collageText:
+        "The atmosphere grows through real objects, artist details, and how guests move through the room.",
       card3Label: "Event mood",
       card3Title: "Best for elegant small-scale gatherings.",
       card3Text:
@@ -131,7 +137,11 @@ const translations = {
       featureTitle: "The menu should feel as layered as the atmosphere around it.",
       featureText:
         "Use this section as the base for your real offerings, seasonal specials, and event-night pairings.",
-      featureLink: "See the latest on Instagram"
+      featureLink: "See the latest on Instagram",
+      collageLabel: "Table mood",
+      collageTitle: "From matcha to pound cake, the menu can look as curated as the walls.",
+      collageText:
+        "Use these moments to present signature pairings, seasonal specials, and shareable table styling."
     },
     coffee: {
       eyebrow: "Coffee Story",
@@ -314,6 +324,8 @@ const translations = {
       stack1Text: "لوحات وألوان وجلسات مرتبة كأنها غرفة فنية معيشة.",
       stack2Label: "وجهة الحي",
       stack2Text: "واجهة تقول من اللحظة الأولى إن القهوة والإبداع يعيشان هنا معاً.",
+      collageLabel: "تفاصيل صغيرة",
+      collageTitle: "ألوان الماتشا، ولحظات الطاولة، واللقيمات الناعمة تبقي المكان حيّاً.",
       accentLabel: "ملكية سعودية",
       accentTitle: "قهوة. فن. مجتمع.",
       accentText: "مساحة حميمة في حجمها وغنية في أجوائها ومهيأة للفعاليات الراقية."
@@ -342,6 +354,10 @@ const translations = {
       card2Label: "طبقة المعرض",
       card2Title: "جدران وزوايا وتفاصيل تشعر بأنها منسقة بعناية.",
       card2Text: "اللوحات والقطع الفنية والتفاصيل الملمسية تمنح المكان روح معرض صغير.",
+      collageLabel: "خريطة بصرية",
+      collageTitle: "الواجهة وطاولات الفن والورش الإبداعية تجعل الهوية تبدو معيشة وحقيقية.",
+      collageText:
+        "تنمو الأجواء من خلال الأشياء الحقيقية وتفاصيل الفنانين والطريقة التي يتحرك بها الضيف داخل الغرفة.",
       card3Label: "مزاج الفعالية",
       card3Title: "الأفضل للقاءات الصغيرة الراقية.",
       card3Text:
@@ -392,7 +408,11 @@ const translations = {
       featureTitle: "يجب أن تشعر القائمة بأنها امتداد للأجواء بطبقاتها وهدوئها.",
       featureText:
         "يمكن استخدام هذا القسم كأساس لقائمتك الحقيقية وعروضك الموسمية وتجارب ليالي الفعاليات.",
-      featureLink: "شاهد الجديد على إنستغرام"
+      featureLink: "شاهد الجديد على إنستغرام",
+      collageLabel: "مزاج الطاولة",
+      collageTitle: "من الماتشا إلى الباوند كيك، يمكن للقائمة أن تبدو منسقة مثل الجدران نفسها.",
+      collageText:
+        "يمكن استخدام هذه اللحظات لعرض التوليفات الخاصة والعروض الموسمية وتنسيق الطاولة القابل للمشاركة."
     },
     coffee: {
       eyebrow: "حكاية القهوة",
@@ -802,6 +822,84 @@ const collectionItems = [
   }
 ];
 
+const collectionSupportCards = {
+  matcha: {
+    label: {
+      en: "Matcha board",
+      ar: "لوحة الماتشا"
+    },
+    title: {
+      en: "A brighter color story for guests who love playful, photogenic drinks.",
+      ar: "حكاية لونية أكثر إشراقاً للضيوف الذين يحبون المشروبات المرحة والجميلة بصرياً."
+    },
+    text: {
+      en: "Matcha can anchor a younger, more collectible side of the brand without losing elegance.",
+      ar: "يمكن للماتشا أن يمنح العلامة جانباً أكثر شبابية وقابلية للمشاركة من دون أن يفقدها أناقتها."
+    },
+    images: ["assets/matcha-heart.jpeg", "assets/matcha-minimal.jpeg", "assets/instagram-01.jpg"]
+  },
+  coffee: {
+    label: {
+      en: "Coffee board",
+      ar: "لوحة القهوة"
+    },
+    title: {
+      en: "Latte art, brewing ritual, and branded cups make the coffee program feel designed.",
+      ar: "رسومات اللاتيه وطقوس التحضير والأكواب المميزة تجعل برنامج القهوة يبدو مصمماً بعناية."
+    },
+    text: {
+      en: "Use this area to show depth: espresso, slow coffee, comforting cups, and table styling.",
+      ar: "يمكن لهذا القسم أن يظهر العمق: إسبريسو، وقهوة مختصة، وأكواب مريحة، وتنسيق للطاولة."
+    },
+    images: ["assets/latte-flower.jpeg", "assets/pour-over-detail.jpg", "assets/branded-cups.jpeg", "assets/hot-chocolate.jpeg"]
+  },
+  "pound-cake": {
+    label: {
+      en: "Cake pairing",
+      ar: "تنسيق الكيك"
+    },
+    title: {
+      en: "Soft bites deserve their own visual moment beside the drinks.",
+      ar: "اللقيمات الناعمة تستحق لحظتها البصرية الخاصة إلى جانب المشروبات."
+    },
+    text: {
+      en: "Pound cake works best when it is styled as part of the table mood, not as an afterthought.",
+      ar: "يبدو الباوند كيك في أجمل صورة حين يقدَّم كجزء من مزاج الطاولة لا كإضافة ثانوية."
+    },
+    images: ["assets/pound-cake.jpg", "assets/art-table.jpeg", "assets/cocoa-window.jpeg"]
+  },
+  "by-owner": {
+    label: {
+      en: "Owner's edit",
+      ar: "اختيار المالكة"
+    },
+    title: {
+      en: "A mix of workshops, storefront scenes, and details that carry Tarfay's personality.",
+      ar: "خليط من الورش والواجهة والتفاصيل التي تحمل شخصية ترفاي الخاصة."
+    },
+    text: {
+      en: "This edit keeps the site feeling personal and hand-shaped rather than generic.",
+      ar: "يحافظ هذا الاختيار على شعور الموقع بأنه شخصي ومصاغ بعناية لا أنه عام أو مكرر."
+    },
+    images: ["assets/art-workshop.jpeg", "assets/streetfront-gallery.jpeg", "assets/event-merch.jpg", "assets/art-table.jpeg"]
+  },
+  videos: {
+    label: {
+      en: "Storyboard",
+      ar: "لوحة المشاهد"
+    },
+    title: {
+      en: "The reels work best when still frames and atmosphere continue around them.",
+      ar: "تظهر الريلات بشكل أفضل حين تستمر اللقطات الثابتة والأجواء البصرية من حولها."
+    },
+    text: {
+      en: "Motion introduces the mood, while the surrounding stills keep the page rich instead of empty.",
+      ar: "تقدم الحركة المزاج العام، بينما تبقي الصور المحيطة الصفحة غنية بصرياً بدلاً من الفراغ."
+    },
+    images: ["assets/instagram-02.jpg", "assets/instagram-06.jpg", "assets/storefront.jpg", "assets/gallery-lounge.jpg"]
+  }
+};
+
 if (navToggle && header) {
   navToggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("menu-open");
@@ -923,6 +1021,19 @@ function getCollectionText(item, field) {
 
   const key = item[`${field}Key`];
   return key ? getTranslation(currentLanguage, key) || "" : "";
+}
+
+function getLocalizedContent(source, field) {
+  const value = source?.[field];
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (value && typeof value === "object") {
+    return value[currentLanguage] || value.en || "";
+  }
+
+  return "";
 }
 
 function attachFallbackSource(element, sources) {
@@ -1175,6 +1286,40 @@ function createCollectionCard(item) {
   return article;
 }
 
+function createCollectionSupportCard(filter) {
+  const support = collectionSupportCards[filter];
+  if (!support) {
+    return null;
+  }
+
+  const article = document.createElement("article");
+  article.className = "collection-support-card reveal";
+
+  const mosaic = document.createElement("div");
+  mosaic.className = "collection-support-mosaic";
+
+  support.images.forEach((source) => {
+    mosaic.appendChild(createImageElement(source, getLocalizedContent(support, "title")));
+  });
+
+  const copy = document.createElement("div");
+  copy.className = "collection-support-copy";
+
+  const label = document.createElement("span");
+  label.textContent = getLocalizedContent(support, "label");
+
+  const title = document.createElement("strong");
+  title.textContent = getLocalizedContent(support, "title");
+
+  const text = document.createElement("p");
+  text.textContent = getLocalizedContent(support, "text");
+
+  copy.append(label, title, text);
+  article.append(mosaic, copy);
+
+  return article;
+}
+
 function renderCollection() {
   if (!collectionGrid) {
     return;
@@ -1186,8 +1331,11 @@ function renderCollection() {
       : collectionItems.filter((item) => item.categories.includes(currentCollectionFilter));
 
   const cards = items.map((item) => createCollectionCard(item));
-  collectionGrid.replaceChildren(...cards);
-  registerReveal(cards);
+  const supportCard = currentCollectionFilter === "all" ? null : createCollectionSupportCard(currentCollectionFilter);
+  const nodes = supportCard ? [...cards, supportCard] : cards;
+
+  collectionGrid.replaceChildren(...nodes);
+  registerReveal(nodes);
   registerVideos(collectionGrid.querySelectorAll(".media-autoplay"));
 }
 
