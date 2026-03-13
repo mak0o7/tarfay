@@ -4,8 +4,10 @@ tarfay-site.zip
 incoming-media/
 dump.html
 preview-*.png
+desktop-*.png
 tarfay-site-*.zip
 _remote_repo/
 remote_repo_inspect_tarfay/
 .server.pid
 dom-snapshot.html
+hero-dom.html

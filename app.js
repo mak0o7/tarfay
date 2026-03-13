@@ -45,6 +45,8 @@ const translations = {
       note2Text: "A room that gives paintings, objects, and textures space to speak.",
       note3Title: "Small elegant events",
       note3Text: "Made for intimate launches, creative nights, and private gatherings.",
+      note4Title: "A quieter rhythm",
+      note4Text: "Between a cup and a canvas, the heart finds a softer place to rest.",
       stageLabel: "Introduction",
       stageTitle: "A cafe and art gallery designed to feel cinematic, calm, and close-knit.",
       stageText:
@@ -168,6 +170,10 @@ const translations = {
       point2Text: "Seating is arranged to feel personal, artistic, and easy to return to.",
       point3Title: "Creative hospitality",
       point3Text: "Coffee service and visual identity work together instead of feeling separate.",
+      quoteLabel: "A soft caption",
+      quoteTitle: "Between coffee and color, memory settles gently.",
+      quoteText:
+        "The most memorable spaces are often the smallest ones, because every object and every guest leaves a trace.",
       frame1Label: "Art corner",
       frame1Text: "A lounge that reads like a small exhibition room.",
       frame2Label: "Creative details",
@@ -316,6 +322,8 @@ const translations = {
       note2Text: "مساحة تمنح اللوحات والتفاصيل والخامات فرصة لتتكلم.",
       note3Title: "فعاليات صغيرة أنيقة",
       note3Text: "مثالية للإطلاقات الحميمة والأمسيات الإبداعية والتجمعات الخاصة.",
+      note4Title: "إيقاع أهدأ",
+      note4Text: "بين كوب وقماش، يجد القلب مكاناً ألين للراحة.",
       stageLabel: "المقدمة",
       stageTitle: "مقهى ومعرض فني صُمم ليشعر الزائر بالهدوء والجمال والقرب.",
       stageText:
@@ -439,6 +447,10 @@ const translations = {
       point2Text: "الجلسات مرتبة لتشعر بأنها شخصية وفنية وسهلة العودة إليها.",
       point3Title: "ضيافة إبداعية",
       point3Text: "القهوة والهوية البصرية يعملان معاً بدلاً من أن يكون كل منهما منفصلاً.",
+      quoteLabel: "تعليق ناعم",
+      quoteTitle: "بين القهوة واللون، تستقر الذاكرة برفق.",
+      quoteText:
+        "أكثر الأماكن رسوخاً في الذاكرة تكون غالباً الأصغر حجماً، لأن كل قطعة وكل ضيف يتركان أثراً.",
       frame1Label: "زاوية فنية",
       frame1Text: "جلسة تقرأ بصرياً كأنها غرفة معرض صغيرة.",
       frame2Label: "تفاصيل مبدعة",
